@@ -47,3 +47,6 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'jettywrapper', '>= 2.0'
+gem 'rsolr', '~> 1.0.6'

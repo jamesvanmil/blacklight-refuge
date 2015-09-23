@@ -54,6 +54,8 @@ GEM
       sass (>= 3.3.0)
     builder (3.2.2)
     byebug (6.0.2)
+    childprocess (0.5.6)
+      ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -66,12 +68,19 @@ GEM
       activesupport
     erubis (2.7.0)
     execjs (2.6.0)
+    ffi (1.9.10)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jettywrapper (2.0.3)
+      activesupport (>= 3.0.0)
+      childprocess
+      i18n
+      logger
+      rubyzip
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -80,6 +89,7 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    logger (1.2.8)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -121,6 +131,7 @@ GEM
     rdoc (4.2.0)
     rsolr (1.0.12)
       builder (>= 2.1.2)
+    rubyzip (1.1.7)
     sass (3.4.18)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -163,8 +174,10 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
+  jettywrapper (>= 2.0)
   jquery-rails
   rails (= 4.2.4)
+  rsolr (~> 1.0.6)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
