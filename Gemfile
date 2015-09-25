@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 #ruby-gemset=blacklight-refuge
 gem 'blacklight'
+gem 'sunspot_rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -40,6 +41,7 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'sunspot_matchers'
 end
 
 group :test do
