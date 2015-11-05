@@ -17,4 +17,4 @@
 /tmp
 
 # Ignore dev solr environment
-/jetty
+/solr

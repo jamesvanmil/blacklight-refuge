@@ -1,0 +1,40 @@
+class Admission < ActiveRecord::Base
+  searchable do
+    text :age, stored: true
+    text :alias, stored: true
+    text :by_whom_committed, stored: true
+    text :date, stored: true
+    text :disposal, stored: true
+    text :for_what_committed, stored: true
+    text :gender, stored: true
+    text :history_number, stored: true
+    text :image_no, stored: true
+    text :full_name, stored: true
+    text :no_of_reader, stored: true
+    text :parentage, stored: true
+    text :religion, stored: true
+    text :whereborn_city, stored: true
+    text :whereborn_city, stored: true
+    text :whereborn_city, stored: true
+    boolean :appearance_bad, stored: true
+    boolean :appearance_bad, stored: true
+    boolean :can_read, stored: true
+    boolean :can_write, stored: true
+    boolean :complaint_of_father, stored: true
+    boolean :complaint_of_father, stored: true
+    boolean :complaint_of_mother, stored: true
+    boolean :father_drinks, stored: true
+    boolean :father_living, stored: true
+    boolean :had_regular_work, stored: true
+    boolean :has_step_father, stored: true
+    boolean :has_step_mother, stored: true
+    boolean :mother_drinks, stored: true
+    boolean :mother_living, stored: true
+    boolean :played_truant, stored: true
+    boolean :swears, stored: true
+    boolean :uses_liquour, stored: true
+    boolean :uses_tobacco, stored: true
+    integer :id, stored: true
+    integer :no_of_times_in_refuge, stored: true
+  end
+end
