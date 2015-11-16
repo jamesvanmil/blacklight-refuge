@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925133350) do
+ActiveRecord::Schema.define(version: 20151113183344) do
 
   create_table "admissions", force: :cascade do |t|
     t.integer  "age"
@@ -64,6 +64,23 @@ ActiveRecord::Schema.define(version: 20150925133350) do
   end
 
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
+
+  create_table "gallery_images", force: :cascade do |t|
+    t.text     "title"
+    t.text     "creator"
+    t.text     "date"
+    t.text     "description"
+    t.text     "source_text"
+    t.text     "source_link"
+    t.text     "format"
+    t.text     "subject"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "searches", force: :cascade do |t|
     t.text     "query_params"
