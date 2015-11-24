@@ -18,7 +18,7 @@ RSpec.describe Admission, type: :model do
   it { should have_searchable_field(:age) }
   it { should have_searchable_field(:alias) }
   it { should have_searchable_field(:gender) }
-  it { should have_searchable_field(:name) }
+  it { should have_searchable_field(:full_name) }
   it { should have_searchable_field(:whereborn_city) }
   it { should have_searchable_field(:whereborn_city) }
   it { should have_searchable_field(:whereborn_city) }
