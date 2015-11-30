@@ -3,7 +3,13 @@ namespace :gallery do
   desc "import gallery images and metadata"
   task:import => :environment do
     begin
-      CSV.foreach("#{Rails.root}/tmp/hor_images.csv", headers: true) do |row|
+      file = open("#{Rails.root}/tmp/hor_images.csv")
+    rescue Errno::ENOENT => e
+      puts "\n*** Import CSV not found.\n\tSee README for details.\n"
+      raise e
+    end
+    CSV.foreach(file, headers: true, encoding: 'windows-1251:utf-8') do |row|
+      begin
         gallery_image = GalleryImage.new
         gallery_image.title = row['title']
         gallery_image.creator = row['creator']
@@ -16,11 +22,12 @@ namespace :gallery do
         gallery_image.image = open("#{Rails.root}/tmp/hor_images/#{row['file_name']}")
         gallery_image.save
         puts '::success::'
-      end
       rescue Errno::ENOENT => e
-        puts "\n*** Import file \"hor_images.csv\" not found, or broken image link in csv.\n\tSee README for details, or: \n"
-        raise e
+        puts "\n*** Broken image link in csv.\n"
+        puts "\t#{e}\n\n"
+        next
       end
+    end
   end
 end
 
