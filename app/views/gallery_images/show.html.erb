@@ -36,12 +36,12 @@
 
 <p>
   <strong>Format:</strong>
-  <%= @gallery_image.format %>
+  <%= @gallery_image.format.collect { |row| row }.join(", ").html_safe unless @gallery_image.format.nil? %>
 </p>
 
 <p>
   <strong>Subject:</strong>
-  <%= @gallery_image.subject %>
+  <%= @gallery_image.subject.collect {|row| link_to row, gallery_images_path(params: { subject: [row] })}.join(", ").html_safe unless @gallery_image.subject.nil? %>
 </p>
 
 <%= link_to 'Edit', edit_gallery_image_path(@gallery_image) %> |
